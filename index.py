@@ -76,7 +76,7 @@ def blue():
 	return None
 
 @app.route('/4')
-def blue():
+def orange():
 	writeNumber(int(ord('4')))
 	time.sleep(.1)
 	writeNumber(int(0x0A))
