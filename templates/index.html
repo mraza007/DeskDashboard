@@ -78,11 +78,11 @@ body, html {
   <h4>Available Bikes: {{bikes}}</h4>
 </div>
 
-<button class="tablink" onclick="openPage('dnd', this, 'red')" ><a href="1">Do Not Disturb</a></button>
-<button class="tablink" onclick="openPage('brb', this, 'orange')" id="defaultOpen">Be Right Back</button>
-<button class="tablink" onclick="openPage('available', this, 'green')">Available</button>
-<button class="tablink" onclick="openPage('dibs', this, 'blue')">Dibs</button>
-<button class="tablink" onclick="openPage('transportation', this, '#6A5ACD')">Transportation</button>
+<button class="tablink" onclick="openPage('dnd', this, 'red')" ><a href="http://localhost:5000/1">Do Not Disturb</a></button>
+<button class="tablink" onclick="openPage('brb', this, 'orange')" id="defaultOpen"><a href="http://localhost:5000/2">Be Right Back</a></button>
+<button class="tablink" onclick="openPage('available', this, 'green')"><a href="http://localhost:5000/3">Available</a></button>
+<button class="tablink" onclick="openPage('dibs', this, 'blue')"><a href="http://localhost:5000/4">Dibs</a></button>
+<button class="tablink" onclick="openPage('transportation', this, '#6A5ACD')"><a href="http://localhost:5000/5"></a>Transportation</button>
 
 <script>
 function openPage(pageName,elmnt,color) {

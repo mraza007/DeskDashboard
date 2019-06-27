@@ -4,11 +4,11 @@ import requests as r
 app = Flask(__name__)
 
 
-#I2C Pins 
-#GPIO2 -> SDA
-#GPIO3 -> SCL
+# I2C Pins 
+# GPIO2 -> SDA
+# GPIO3 -> SCL
 
-#Import the Library Requreid 
+Import the Library Requreid 
 import smbus
 import time
 
@@ -59,29 +59,37 @@ def red():
 	writeNumber(int(ord('1')))
 	time.sleep(.1)
 	writeNumber(int(0x0A))
-	return None
+	return render("index.html")
 
 @app.route('/2')
 def green():
 	writeNumber(int(ord('2')))
 	time.sleep(.1)
 	writeNumber(int(0x0A))
-	return None
+	return render("index.html")
 
 @app.route('/3')
 def blue():
 	writeNumber(int(ord('3')))
 	time.sleep(.1)
 	writeNumber(int(0x0A))
-	return None
+	return render("index.html")
 
 @app.route('/4')
 def orange():
 	writeNumber(int(ord('4')))
 	time.sleep(.1)
 	writeNumber(int(0x0A))
-	return None
+	return render("index.html")
 
+@app.route('/5')
+def ts():
+	api = r.get('https://feeds.divvybikes.com/stations/stations.json')
+	data = api.json()
+	station = data['stationBeanList'][45]['stationName']
+	docks = data['stationBeanList'][45]['availableDocks']
+	bikes = data['stationBeanList'][45]['availableBikes']
+	return render("index.html",docks=docks,station=station,bikes=bikes)
 
 
 
