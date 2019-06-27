@@ -8,30 +8,30 @@ app = Flask(__name__)
 #GPIO2 -> SDA
 #GPIO3 -> SCL
 
-#Import the Library Requreid 
-import smbus
-import time
+# #Import the Library Requreid 
+# import smbus
+# import time
 
-# for RPI version 1, use "bus = smbus.SMBus(0)"
-bus = smbus.SMBus(1)
+# # for RPI version 1, use "bus = smbus.SMBus(0)"
+# bus = smbus.SMBus(1)
 
-# This is the address we setup in the Arduino Program
-#Slave Address 1
-address = 0x66
+# # This is the address we setup in the Arduino Program
+# #Slave Address 1
+# address = 0x66
 
-#Slave Address 2
-address_2 = 0x66
+# #Slave Address 2
+# address_2 = 0x66
 
-def writeNumber(value):
-    bus.write_byte(address, value)
-    bus.write_byte(address_2, value)
-    # bus.write_byte_data(address, 0, value)
-    return -1
+# def writeNumber(value):
+#     bus.write_byte(address, value)
+#     bus.write_byte(address_2, value)
+#     # bus.write_byte_data(address, 0, value)
+#     return -1
 
-def readNumber():
-    # number = bus.read_byte(address)
-    number = bus.read_byte_data(address, 1)
-    return number
+# def readNumber():
+#     # number = bus.read_byte(address)
+#     number = bus.read_byte_data(address, 1)
+#     return number
     
 # while True:
 #     #Receives the data from the User
@@ -54,14 +54,33 @@ def hello():
 	return render("index.html",docks=docks,station=station,bikes=bikes)
 
 
-@app.route('/red')
+@app.route('/1')
 def red():
 	writeNumber(int(ord('1')))
 	time.sleep(.1)
 	writeNumber(int(0x0A))
-	return render("index.html",docks=docks,station=station,bikes=bikes)
+	return None
 
+@app.route('/2')
+def green():
+	writeNumber(int(ord('2')))
+	time.sleep(.1)
+	writeNumber(int(0x0A))
+	return None
 
+@app.route('/3')
+def blue():
+	writeNumber(int(ord('3')))
+	time.sleep(.1)
+	writeNumber(int(0x0A))
+	return None
+
+@app.route('/4')
+def blue():
+	writeNumber(int(ord('4')))
+	time.sleep(.1)
+	writeNumber(int(0x0A))
+	return None
 
 
 
