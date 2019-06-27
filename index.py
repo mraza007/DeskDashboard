@@ -8,7 +8,7 @@ app = Flask(__name__)
 # GPIO2 -> SDA
 # GPIO3 -> SCL
 
-Import the Library Requreid 
+# Import the Library Requreid 
 import smbus
 import time
 
