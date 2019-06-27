@@ -54,12 +54,13 @@ def hello():
 	return render("index.html",docks=docks,station=station,bikes=bikes)
 
 
-@app.route('/1')
+@app.route('/red')
 def red():
 	writeNumber(int(ord('1')))
 	time.sleep(.1)
 	writeNumber(int(0x0A))
-	return "It works"
+	return None
+
 
 
 
