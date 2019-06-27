@@ -1,11 +1,16 @@
 from flask import Flask
 from flask import render_template as render,url_for
-import requests
+import requests as r
 app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return render("index.html")
+	api = r.get('https://feeds.divvybikes.com/stations/stations.json')
+	data = api.json()
+	station = data['stationBeanList'][45]['stationName']
+	docks = data['stationBeanList'][45]['availableDocks']
+	bikes = data['stationBeanList'][45]['availableBikes']
+	return render("index.html",docks=docks,station=station,bikes=bikes)
 
 
 
