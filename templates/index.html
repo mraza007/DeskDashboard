@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- BULMA CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
 <style>
 * {box-sizing: border-box}
 
@@ -22,7 +24,7 @@ body, html {
   cursor: pointer;
   padding: 14px 16px;
   font-size: 17px;
-  width: 25%;
+  width: 20%;
 }
 
 .tablink:hover {
@@ -41,6 +43,7 @@ body, html {
 #brb {background-color: orange;}
 #available {background-color: green;}
 #dibs {background-color: blue;}
+#transportation {background-color: #6A5ACD;}
 </style>
 </head>
 <body>
@@ -67,10 +70,16 @@ body, html {
   <p><center>This seat is reserved</center></p>
 </div>
 
+<div id="transportation" class="tabcontent">
+  <h3>Transportation</h3>
+  <p><center></center></p>
+</div>
+
 <button class="tablink" onclick="openPage('dnd', this, 'red')">Do Not Disturb</button>
 <button class="tablink" onclick="openPage('brb', this, 'orange')" id="defaultOpen">Be Right Back</button>
 <button class="tablink" onclick="openPage('available', this, 'green')">Available</button>
 <button class="tablink" onclick="openPage('dibs', this, 'blue')">Dibs</button>
+<button class="tablink" onclick="openPage('transportation', this, '#6A5ACD')">Transportation</button>
 
 <script>
 function openPage(pageName,elmnt,color) {
