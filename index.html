@@ -37,40 +37,40 @@ body, html {
   height: 100%;
 }
 
-#Home {background-color: red;}
-#News {background-color: green;}
-#Contact {background-color: blue;}
-#About {background-color: orange;}
+#dnd {background-color: red;}
+#brb {background-color: orange;}
+#available {background-color: green;}
+#dibs {background-color: blue;}
 </style>
 </head>
 <body>
 
 
 
-<div id="Home" class="tabcontent">
+<div id="dnd" class="tabcontent">
   <h3>Home</h3>
-  <p>Home is where the heart is..</p>
+  <p>Do not disturb. Thank you.</p>
 </div>
 
-<div id="News" class="tabcontent">
+<div id="brb" class="tabcontent">
   <h3>News</h3>
-  <p>Some news this fine day!</p>
+  <p>I am away</p>
 </div>
 
-<div id="Contact" class="tabcontent">
+<div id="available" class="tabcontent">
   <h3>Contact</h3>
-  <p>Get in touch, or swing by for a cup of coffee.</p>
+  <p>Feel free to talk with me.</p>
 </div>
 
-<div id="About" class="tabcontent">
+<div id="dibs" class="tabcontent">
   <h3>About</h3>
-  <p>Who we are and what we do.</p>
+  <p><center>This seat is reserved</center></p>
 </div>
 
-<button class="tablink" onclick="openPage('Home', this, 'red')">Do Not Disturb</button>
-<button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">Be Right Back</button>
-<button class="tablink" onclick="openPage('Contact', this, 'blue')">Dibs</button>
-<button class="tablink" onclick="openPage('About', this, 'orange')">Gallery</button>
+<button class="tablink" onclick="openPage('dnd', this, 'red')">Do Not Disturb</button>
+<button class="tablink" onclick="openPage('brb', this, 'orange')" id="defaultOpen">Be Right Back</button>
+<button class="tablink" onclick="openPage('available', this, 'green')">Available</button>
+<button class="tablink" onclick="openPage('dibs', this, 'blue')">Dibs</button>
 
 <script>
 function openPage(pageName,elmnt,color) {
