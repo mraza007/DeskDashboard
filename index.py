@@ -59,7 +59,7 @@ def red():
 	writeNumber(int(ord('1')))
 	time.sleep(.1)
 	writeNumber(int(0x0A))
-	return None
+	return render("index.html",docks=docks,station=station,bikes=bikes)
 
 
 
